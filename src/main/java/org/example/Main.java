@@ -67,6 +67,7 @@ public class Main {
         comprobarPeso(paciente3);
         mayorEdad(paciente3);
         //paciente4.mostrarInfoPaciente();
+        System.out.println(paciente3);
 
     }
 

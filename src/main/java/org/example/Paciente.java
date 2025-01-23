@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.SQLInput;
 import java.util.Random;
 
 public class Paciente {
@@ -125,6 +126,11 @@ public class Paciente {
 
     public void setAltura(float altura) {
         this.altura = altura;
+    }
+
+    @Override
+    public String toString(){
+        return "Paciente con nombre " + this.nombre + "" + " y " + this.edad + " años de edad. Género " + this.genero + " y dni: " + this.dni + ". Con peso " + this.peso + " y altura " + this.altura + ".";
     }
 
 }
