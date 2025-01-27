@@ -101,9 +101,12 @@ public class Main {
 
     public static void mainLibro(){
 
-        Libro Libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez");
-        Libro Libro2 = new Libro("Crítica de la razón pura", "Immanuel Kant");
-        Libro Libro3 = new Libro("Gerónimo Stilton", "La rata");
+        Estudiante estudiante1 = new Estudiante("Manuel", "2ASIR", "manuel@manuel.manuel");
+        Editorial editorial = new Editorial("Freelance", "España");
+
+        Libro Libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", editorial);
+        Libro Libro2 = new Libro("Crítica de la razón pura", "Immanuel Kant", editorial);
+        Libro Libro3 = new Libro("Gerónimo Stilton", "La rata", editorial);
 
         System.out.println("-----------------------------------------");
 
@@ -118,9 +121,11 @@ public class Main {
 
         System.out.println("-----------------------------------------");
 
-        Libro1.prestar();
-        Libro3.prestar();
-        Libro1.devolver();
+        Libro1.prestar(estudiante1);
+        System.out.println(Libro1);
+        Libro1.devolver(estudiante1);
+        System.out.println(Libro1);
+
 
     }
 

@@ -11,6 +11,7 @@ public class Estudiante {
     private String curso;
     private int nia;
     private String email;
+    private Libro libroPrestado;
 
     public Estudiante(String nombre){
         this.nombre = nombre;
@@ -38,6 +39,10 @@ public class Estudiante {
         this.email = email;
     }
 
+    public void setLibroPrestado(Libro libroPrestado) {
+        this.libroPrestado = libroPrestado;
+    }
+
     public String getNombre(){
         return this.nombre;
     }
@@ -54,8 +59,15 @@ public class Estudiante {
         return this.email;
     }
 
+    public Libro getLibroPrestado() {
+        return libroPrestado;
+    }
+
     @Override
     public String toString(){
+        if(libroPrestado!=null) {
+            return this.nombre + " " + this.curso + " " + this.nia + " " + this.email + " " + libroPrestado.getTitulo();
+        }
         return this.nombre + " " + this.curso + " " + this.nia + " " + this.email;
     }
 
