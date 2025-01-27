@@ -7,7 +7,8 @@ public class Main {
 
         //mainPersona();
         //aplicacionTelevisor();
-        mainPaciente();
+        //mainPaciente();
+        mainLibro();
     }
 
     public static void mainPersona(){
@@ -39,11 +40,11 @@ public class Main {
 
     public static void mainPaciente(){
 
-//        Paciente paciente_manuel = new Paciente("Manuel", 21, 'H', 65, 1.79F);
+//        Paciente paciente1 = new Paciente("Demetrio", 23, 'H', 65, 1.79F);
 //        paciente_manuel.mostrarInfoPaciente();
 //        Paciente paciente1 = new Paciente();
 //        paciente1.mostrarInfoPaciente();
-//        Paciente paciente2 = new Paciente("Manuel 2", 21, 'H');
+//        Paciente paciente2 = new Paciente("Manuel", 21, 'H');
 //        paciente2.mostrarInfoPaciente();
 
         Scanner entrada = new Scanner(System.in);
@@ -96,6 +97,31 @@ public class Main {
         } else {
             System.out.println("La persona " + paciente.getNombre() + " es menor de edad.");
         }
+    }
+
+    public static void mainLibro(){
+
+        Libro Libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez");
+        Libro Libro2 = new Libro("Crítica de la razón pura", "Immanuel Kant");
+        Libro Libro3 = new Libro("Gerónimo Stilton", "La rata");
+
+        System.out.println("-----------------------------------------");
+
+        System.out.println(Libro1);
+        System.out.println(Libro2);
+        System.out.println(Libro3);
+
+        System.out.println("-----------------------------------------");
+
+        Libro.getTotalLibros();
+        Libro.getLibrosDisponibles();
+
+        System.out.println("-----------------------------------------");
+
+        Libro1.prestar();
+        Libro3.prestar();
+        Libro1.devolver();
+
     }
 
 }

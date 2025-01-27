@@ -5,7 +5,7 @@ import javax.print.DocFlavor;
 public class Estudiante {
 
     public static int contadorEstudiantes = 0;
-    public final String CORREO_FORMAT = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
+    public static final String CORREO_FORMAT = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
 
     private String nombre;
     private String curso;
@@ -64,7 +64,7 @@ public class Estudiante {
     }
 
     public static void validarCorreo(String email){
-        if(email.matches()){
+        if(email.matches(CORREO_FORMAT)){
             System.out.println("El correo es válido");
         }else {
             System.out.println("El correo no es válido.");
