@@ -1,5 +1,11 @@
 package org.example;
 
+import org.example.biblioteca.Editorial;
+import org.example.biblioteca.Estudiante;
+import org.example.biblioteca.Libro;
+import org.example.equipos.Equipo;
+import org.example.equipos.Persona;
+
 import java.util.Scanner;
 
 public class Main {

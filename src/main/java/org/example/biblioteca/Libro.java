@@ -1,4 +1,6 @@
-package org.example;
+package org.example.biblioteca;
+
+import org.example.Prestamo;
 
 public class Libro {
 

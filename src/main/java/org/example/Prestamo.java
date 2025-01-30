@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.biblioteca.Estudiante;
+import org.example.biblioteca.Libro;
+
 import java.time.LocalDate;
 
 public class Prestamo {
