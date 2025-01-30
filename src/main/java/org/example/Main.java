@@ -3,6 +3,7 @@ package org.example;
 import org.example.biblioteca.Editorial;
 import org.example.biblioteca.Estudiante;
 import org.example.biblioteca.Libro;
+import org.example.biblioteca.Prestamo;
 import org.example.equipos.Equipo;
 import org.example.equipos.Persona;
 

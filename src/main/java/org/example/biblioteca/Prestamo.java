@@ -1,7 +1,4 @@
-package org.example;
-
-import org.example.biblioteca.Estudiante;
-import org.example.biblioteca.Libro;
+package org.example.biblioteca;
 
 import java.time.LocalDate;
 

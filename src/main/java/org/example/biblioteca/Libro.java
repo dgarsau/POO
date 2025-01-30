@@ -1,7 +1,5 @@
 package org.example.biblioteca;
 
-import org.example.Prestamo;
-
 public class Libro {
 
     public static int cantidadLibros = 0;
