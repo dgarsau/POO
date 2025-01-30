@@ -9,6 +9,8 @@ public class Main {
         //aplicacionTelevisor();
         //mainPaciente();
         mainLibro();
+        //mainEquipo();
+
     }
 
     public static void mainPersona(){
@@ -121,11 +123,31 @@ public class Main {
 
         System.out.println("-----------------------------------------");
 
-        Libro1.prestar(estudiante1);
+        Prestamo prestamo = Libro1.prestar(estudiante1);
+        Prestamo prestamo2 = Libro2.prestar(estudiante1);
+
+        System.out.println("-----------------------------------------");
+
+        System.out.println(estudiante1);
         System.out.println(Libro1);
+        System.out.println(prestamo);
+
+        System.out.println("-----------------------------------------");
+
         Libro1.devolver(estudiante1);
         System.out.println(Libro1);
 
+    }
+
+    public static void mainEquipo(){
+
+        Persona persona1 = new Persona("Luis", "Sánchez", "12345678X", 60, 40, "Mutxamel", "Futbolista");
+        Persona persona2 = new Persona("Antonio", "García", "12545678X", 75, 23, "Mutxamel", "Futbolista");
+        Equipo equipo1 = new Equipo("Real Mutxamel");
+
+        equipo1.anyadirComponente(persona1);
+        equipo1.anyadirComponente(persona2);
+        System.out.println(equipo1);
 
     }
 

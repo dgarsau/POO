@@ -1,6 +1,6 @@
 package org.example;
 
-import javax.print.DocFlavor;
+import java.util.ArrayList;
 
 public class Estudiante {
 
@@ -11,12 +11,13 @@ public class Estudiante {
     private String curso;
     private int nia;
     private String email;
-    private Libro libroPrestado;
+    private ArrayList<Libro> librosPrestados;
 
     public Estudiante(String nombre){
         this.nombre = nombre;
         contadorEstudiantes++;
         this.nia=contadorEstudiantes;
+        librosPrestados = new ArrayList<>();
     }
 
     public Estudiante(String nombre, String curso, String email){
@@ -25,6 +26,7 @@ public class Estudiante {
         this.email=email;
         contadorEstudiantes++;
         this.nia=contadorEstudiantes;
+        librosPrestados = new ArrayList<>();
     }
 
     public void setNombre(String nombre) {
@@ -39,8 +41,8 @@ public class Estudiante {
         this.email = email;
     }
 
-    public void setLibroPrestado(Libro libroPrestado) {
-        this.libroPrestado = libroPrestado;
+    public void setLibrosPrestados(ArrayList<Libro> librosPrestados) {
+        this.librosPrestados = librosPrestados;
     }
 
     public String getNombre(){
@@ -59,16 +61,24 @@ public class Estudiante {
         return this.email;
     }
 
-    public Libro getLibroPrestado() {
-        return libroPrestado;
+    public ArrayList<Libro> getLibrosPrestados() {
+        return librosPrestados;
+    }
+
+    public void anyadirLibro(Libro libro){
+        librosPrestados.add(libro);
+    }
+
+    public void borrarLibro(Libro libro){
+        librosPrestados.remove(libro);
     }
 
     @Override
     public String toString(){
-        if(libroPrestado!=null) {
-            return this.nombre + " " + this.curso + " " + this.nia + " " + this.email + " " + libroPrestado.getTitulo();
+        if(!librosPrestados.isEmpty()) {
+            return "Estudiante: [" + this.nombre + ", " + this.curso + ", " + this.nia + ", " + this.email + ", " + librosPrestados + "]";
         }
-        return this.nombre + " " + this.curso + " " + this.nia + " " + this.email;
+        return "Estudiante: [" + this.nombre + ", " + this.curso + ", " + this.nia + ", " + this.email + "]";
     }
 
     public static int obtenerTotalEstudiantes(){
