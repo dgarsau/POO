@@ -13,7 +13,7 @@ public class Invitado {
     public Invitado(String nombre, String profesion, LocalDate fecha_visita, int temporada) {
         this.nombre = nombre;
         this.profesion = profesion;
-        this.fecha_visita = setFecha_visita();
+        //this.fecha_visita = setFecha_visita();
         this.temporada = temporada;
     }
 

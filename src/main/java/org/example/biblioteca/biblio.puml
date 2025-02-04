@@ -1,0 +1,81 @@
+@startuml
+package org.example.biblioteca {
+
+    class Prestamo {
+        - Estudiante estudiante
+        - Libro libro
+        - LocalDate fecha
+        + Prestamo(Estudiante estudiante, Libro libro)
+        + Estudiante getEstudiante()
+        + void setEstudiante(Estudiante estudiante)
+        + Libro getLibro()
+        + void setLibro(Libro libro)
+        + LocalDate getFecha()
+        + void setFecha(LocalDate fecha)
+        + String toString()
+    }
+
+    class Editorial {
+        - String nombre
+        - String pais
+        - ArrayList<Libro> listaLibros
+        + Editorial(String nombre, String pais)
+        + String getNombre()
+        + void setNombre(String nombre)
+        + String getPais()
+        + void setPais(String pais)
+        + ArrayList<Libro> getListaLibros()
+        + void setListaLibros(ArrayList<Libro> listaLibros)
+        + void anyadirLibro(Libro libro)
+        + void eliminarLibro(Libro libro)
+        + String toString()
+    }
+
+    class Estudiante {
+        - static int contadorEstudiantes
+        - static final String CORREO_FORMAT
+        - String nombre
+        - String curso
+        - int nia
+        - String email
+        - ArrayList<Libro> librosPrestados
+        + Estudiante(String nombre)
+        + Estudiante(String nombre, String curso, String email)
+        + void setNombre(String nombre)
+        + void setCurso(String curso)
+        + void setEmail(String email)
+        + void setLibrosPrestados(ArrayList<Libro> librosPrestados)
+        + String getNombre()
+        + String getCurso()
+        + int getNia()
+        + String getEmail()
+        + ArrayList<Libro> getLibrosPrestados()
+        + void anyadirLibro(Libro libro)
+        + void borrarLibro(Libro libro)
+        + String toString()
+        + static int obtenerTotalEstudiantes()
+        + static void validarCorreo(String email)
+    }
+
+    class Libro {
+        - String titulo
+        - String autor
+        - int añoPublicacion
+        + Libro(String titulo, String autor, int añoPublicacion)
+        + String getTitulo()
+        + void setTitulo(String titulo)
+        + String getAutor()
+        + void setAutor(String autor)
+        + int getAñoPublicacion()
+        + void setAñoPublicacion(int añoPublicacion)
+        + String toString()
+    }
+
+    Prestamo -- Estudiante : estudiante
+    Prestamo -- Libro : libro
+
+    Editorial o-- Libro : listaLibros
+    Estudiante o-- Libro : librosPrestados
+}
+
+@enduml

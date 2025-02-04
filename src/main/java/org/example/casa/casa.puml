@@ -1,0 +1,61 @@
+@startuml
+package org.example.casa {
+
+    class Casa {
+        - Scanner entrada
+        - String direccion
+        - ArrayList<Habitacion> habitaciones
+        - Propietario propietario
+        + Casa(String direccion)
+        + void agregarHabitacion(String nombre, double metros)
+        + void eliminarHabitacion(String nombre)
+        + void mostrarHabitaciones()
+        + Habitacion getHabitacionMasGrande()
+        + Propietario getPropietario()
+        + void setPropietario()
+        + ArrayList<Habitacion> getHabitaciones()
+        + void setHabitaciones(ArrayList<Habitacion> habitaciones)
+        + void consumoMáximo()
+    }
+
+    class Habitacion {
+        - String nombre
+        - double metrosCuadrados
+        - ArrayList<Electrodomestico> electrodomesticos
+        + Habitacion(String nombre, double metrosCuadrados)
+        + String getNombre()
+        + double getMetrosCuadrados()
+        + void setMetrosCuadrados(double metrosCuadrados)
+        + void agregarElectrodomestico(String nombre, double consumo)
+        + void mostrarElectrodomésticos()
+        + double calcularConsumo()
+        + String toString()
+    }
+
+    class Electrodomestico {
+        - String nombre
+        - double consumo
+        + Electrodomestico(String nombre, double consumo)
+        + String getNombre()
+        + void setNombre(String nombre)
+        + double getConsumo()
+        + void setConsumo(double consumo)
+    }
+
+    class Propietario {
+        - String nombre
+        - int edad
+        + Propietario(String nombre, int edad)
+        + String getNombre()
+        + void setNombre(String nombre)
+        + int getEdad()
+        + void setEdad(int edad)
+        + String toString()
+    }
+
+    Casa *-- Habitacion : habitaciones
+    Habitacion *-- Electrodomestico : electrodomesticos
+    Casa *-- Propietario : propietario
+}
+
+@enduml
