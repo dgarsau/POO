@@ -3,7 +3,6 @@ package org.example.practica1;
 public class Empleado {
 
     private int cantidadEmpleados=0;
-    private String[] cargos = {""};
 
     private String id;
     private String nombre;

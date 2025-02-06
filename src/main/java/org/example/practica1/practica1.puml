@@ -1,0 +1,86 @@
+@startuml
+
+class Cadena {
+    - String nombre
+    - ArrayList<Programa> listaProgramas
+    + Cadena(String nombre)
+    + void insertarPrograma(Programa programa)
+    + void invitadoAntes(String nombre)
+    + ArrayList<Programa> getListaProgramas()
+    + void setListaProgramas(ArrayList<Programa> listaProgramas)
+    + String getNombre()
+    + void setNombre(String nombre)
+    + String toString()
+}
+
+class Programa {
+    - String nombre
+    - Cadena cadena
+    - int temporadas
+    - ArrayList<Empleado> listaEmpleados
+    - ArrayList<Invitado> listaInvitados
+    - Empleado director
+    + Programa(String nombre, Cadena cadena, String director)
+    + void insertarEmpleado(String nombre, String cargo)
+    + void insertarInvitado(String nombre, String profesion, int temporada)
+    + void invitadosTemporada(int temporada)
+    + void vecesInvitado(String nombre)
+    + void rastrearVeces(String nombre)
+    + boolean buscarInvitado(String nombre)
+    + String getNombre()
+    + void setNombre(String nombre)
+    + Cadena getCadena()
+    + void setCadena(Cadena cadena)
+    + int getTemporadas()
+    + void setTemporadas(int temporadas)
+    + ArrayList<Empleado> getListaEmpleados()
+    + void setListaEmpleados(ArrayList<Empleado> listaEmpleados)
+    + ArrayList<Invitado> getListaInvitados()
+    + void setListaInvitados(ArrayList<Invitado> listaInvitados)
+    + Empleado getDirector()
+    + void setDirector(Empleado director)
+    + String toString()
+}
+
+class Empleado {
+    - int cantidadEmpleados
+    - String id
+    - String nombre
+    - String cargo
+    - Empleado director
+    + Empleado(String nombre, String cargo, Empleado director)
+    - String calcularId(int cantidadEmpleados)
+    + void setDirector(String cargo, Empleado director)
+    + void setCargo(String cargo)
+    + String getNombre()
+    + void setNombre(String nombre)
+    + String getId()
+    + void setId(String id)
+    + String getCargo()
+    + Empleado getDirector()
+    + String toString()
+}
+
+class Invitado {
+    - String nombre
+    - String profesion
+    - LocalDate fecha_visita
+    - int temporada
+    + Invitado(String nombre, String profesion, int temporada)
+    + void setFecha_visita()
+    + String getNombre()
+    + void setNombre(String nombre)
+    + String getProfesion()
+    + void setProfesion(String profesion)
+    + LocalDate getFecha_visita()
+    + int getTemporada()
+    + void setTemporada(int temporada)
+    + String toString()
+}
+
+Cadena "1" *-- "0..*" Programa : tiene
+Programa "1" *-- "0..*" Empleado : trabajan
+Programa "1" *-- "0..*" Invitado : van
+Empleado "1" -- "0..1" Empleado : es director
+
+@enduml

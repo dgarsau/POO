@@ -1,8 +1,5 @@
 package org.example.practica1;
 
-import org.example.casa.Habitacion;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Programa {

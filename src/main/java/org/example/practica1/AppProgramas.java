@@ -33,11 +33,15 @@ public class AppProgramas {
         Entrada.separador();
         System.out.println(el_hormiguero.getListaInvitados());
 
-
         Entrada.separador();
         el_hormiguero.invitadosTemporada(1);
+        Entrada.separador();
         el_hormiguero.vecesInvitado("Aitana");
+        Entrada.separador();
         el_hormiguero.rastrearVeces("Aitana");
+
+
+        Entrada.separador();
         boolean vinoAitana = el_hormiguero.buscarInvitado("Aitana");
         if(vinoAitana){
             System.out.println("Sí que vino");
@@ -45,6 +49,7 @@ public class AppProgramas {
             System.out.println("No vino, no");
         }
 
+        Entrada.separador();
         antena3.invitadoAntes("Aitana");
 
     }

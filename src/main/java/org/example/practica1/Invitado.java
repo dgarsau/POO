@@ -1,12 +1,8 @@
 package org.example.practica1;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class Invitado {
-
-    Scanner entrada = new Scanner(System.in);
-    private LocalDate fecha = LocalDate.of(2025, 03, 15);
 
     private String nombre;
     private String profesion;
@@ -21,8 +17,7 @@ public class Invitado {
     }
 
     public void setFecha_visita() {
-        fecha=Entrada.entradaFecha();
-        this.fecha_visita = fecha;
+        this.fecha_visita = Entrada.entradaFecha();
     }
 
 

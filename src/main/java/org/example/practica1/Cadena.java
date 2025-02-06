@@ -21,6 +21,7 @@ public class Cadena {
 
         LocalDate fechaanterior = LocalDate.of(3000,1,1);
         Programa programaanterior = new Programa(null, this, null);
+        boolean imprimir = false;
 
         for (Programa programa: listaProgramas){
             for (Invitado invitado: programa.getListaInvitados()){
@@ -31,12 +32,15 @@ public class Cadena {
                     if(invitado.getFecha_visita().isBefore(fechaanterior)){
                         fechaanterior=invitado.getFecha_visita();
                         programaanterior=programa;
+                        imprimir=true;
                     }
                 }
             }
         }
 
-        System.out.println("El invitado " + nombre + " estuvo antes en " + programaanterior.getNombre() + " (El día " + fechaanterior + ")");
+        if(imprimir) {
+            System.out.println("El invitado " + nombre + " estuvo antes en " + programaanterior.getNombre() + " (El día " + fechaanterior + ")");
+        }
 
     }
 
