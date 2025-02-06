@@ -9,9 +9,9 @@ import org.example.equipos.Persona;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class MainPacienteTelevisor {
 
+    public static void main(String[] args) {
         //mainPersona();
         //aplicacionTelevisor();
         //mainPaciente();
@@ -159,3 +159,4 @@ public class Main {
     }
 
 }
+
