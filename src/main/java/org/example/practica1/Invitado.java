@@ -1,24 +1,28 @@
 package org.example.practica1;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Invitado {
 
-    LocalDate fecha = LocalDate.of(2025, 03, 15);
+    Scanner entrada = new Scanner(System.in);
+    private LocalDate fecha = LocalDate.of(2025, 03, 15);
+
     private String nombre;
     private String profesion;
     private LocalDate fecha_visita;
     private int temporada;
 
-    public Invitado(String nombre, String profesion, LocalDate fecha_visita, int temporada) {
+    public Invitado(String nombre, String profesion, int temporada) {
         this.nombre = nombre;
         this.profesion = profesion;
-        //this.fecha_visita = setFecha_visita();
+        setFecha_visita();
         this.temporada = temporada;
     }
 
-    public void setFecha_visita(LocalDate fecha_visita) {
-        this.fecha_visita = fecha_visita;
+    public void setFecha_visita() {
+        fecha=Entrada.entradaFecha();
+        this.fecha_visita = fecha;
     }
 
 
@@ -50,6 +54,10 @@ public class Invitado {
 
     public void setTemporada(int temporada) {
         this.temporada = temporada;
+    }
+
+    public String toString(){
+        return "Invitado (Nombre: " + nombre + ", Profesion:" + profesion + ", Fecha de visita: " + fecha_visita + ", Temporada: " + temporada + ")";
     }
 
 }

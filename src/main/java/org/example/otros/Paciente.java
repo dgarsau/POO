@@ -1,6 +1,5 @@
-package org.example;
+package org.example.otros;
 
-import java.sql.SQLInput;
 import java.util.Random;
 
 public class Paciente {

@@ -20,7 +20,7 @@ public class Empleado {
     }
 
     private String calcularId(int cantidadEmpleados) {
-        return String.format("EP%02d", cantidadEmpleados);
+        return String.format("EP%03d", cantidadEmpleados);
     }
 
     public void setDirector(String cargo, Empleado director) {
@@ -67,5 +67,9 @@ public class Empleado {
         return director;
     }
 
+    @Override
+    public String toString(){
+        return "(Nombre: " + nombre + ", ID:" + id + ", Cargo: " + cargo + ")";
+    }
 
 }

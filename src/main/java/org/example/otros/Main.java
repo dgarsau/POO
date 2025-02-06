@@ -1,4 +1,4 @@
-package org.example;
+package org.example.otros;
 
 import org.example.biblioteca.Editorial;
 import org.example.biblioteca.Estudiante;
