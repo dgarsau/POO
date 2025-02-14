@@ -1,0 +1,33 @@
+@startuml
+
+package org.example.polimorfismo_empresa {
+
+    class Empleado {
+        +realizarTarea(): void
+    }
+
+    class Desarrollador {
+        +realizarTarea(): void
+    }
+
+    class Disenyador {
+        +realizarTarea(): void
+    }
+
+    class Gerente {
+        +realizarTarea(): void
+    }
+
+    class appEmpresa {
+        +main(String[] args): void
+        +recorrerArray(Empleado[] empleados): void
+        +asignarTarea(Empleado empleado): void
+    }
+
+    appEmpresa --> Empleado
+    Empleado <|-- Desarrollador
+    Empleado <|-- Disenyador
+    Empleado <|-- Gerente
+}
+
+@enduml
