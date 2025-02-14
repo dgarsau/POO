@@ -1,6 +1,6 @@
 package org.example.ecommerce;
 
-import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PayPal extends MetodoPago{
@@ -17,7 +17,7 @@ public class PayPal extends MetodoPago{
 
     @Override
     void procesarPago(double importe) {
-        System.out.println("Procesando pago de importe " + importe + " con PayPal");
+        System.out.println("Procesando pago de importe " + importe + "€ con PayPal");
     }
 
     public void introducirDatos(){
@@ -25,12 +25,23 @@ public class PayPal extends MetodoPago{
         System.out.println("Correo electrónico:");
         String numero = entrada.next();
         this.correo = numero;
+        System.out.println("Saldo:");
+        try {
+            double saldo = entrada.nextDouble();
+            this.saldo = saldo;
+        }catch (InputMismatchException e){
+            System.out.println("ERROR. Entrada no válida.");
+            this.saldo = -1;
+        }
     }
 
-    public boolean validarPaypal(String correo) {
+    public boolean validarPaypal(String correo, double saldo) {
         System.out.println("Validando PayPal...");
         if (!correo.matches(FORMATO_CORREO)){
             System.out.println("ERROR. Formato de correo incorrecto.");
+            return false;
+        } else if (saldo<0) {
+            System.out.println("ERROR. Saldo incorrecto.");
             return false;
         } else{
             return true;
@@ -41,13 +52,22 @@ public class PayPal extends MetodoPago{
         boolean formato=false;
         while(!formato){
             introducirDatos();
-            formato=validarPaypal(correo);
+            formato=validarPaypal(correo, saldo);
             entrada.nextLine();
         }
     }
 
-    public void validarPago(){
+    public boolean validarPago(double importe, double saldo){
+        if(importe<saldo){
+            return true;
+        } else {
+            System.out.println("Saldo insuficiente.");
+            return false;
+        }
+    }
 
+    public double getSaldo() {
+        return saldo;
     }
 
 }

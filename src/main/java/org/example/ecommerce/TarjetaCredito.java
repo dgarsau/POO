@@ -18,7 +18,7 @@ public class TarjetaCredito extends MetodoPago{
 
     @Override
     void procesarPago(double importe) {
-        System.out.println("Procesando pago de importe " + importe + " con tarjeta de crédito " + tipo);
+        System.out.println("Procesando pago de importe " + importe + "€ con tarjeta de crédito " + tipo);
     }
 
 

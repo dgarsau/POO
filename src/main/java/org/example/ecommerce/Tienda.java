@@ -20,7 +20,10 @@ public class Tienda {
             case "PAYPAL":
                 PayPal paypal = new PayPal();
                 importe=introducirImporte();
-                paypal.procesarPago(importe);
+                boolean pago = paypal.validarPago(importe, paypal.getSaldo());
+                if (pago){
+                    paypal.procesarPago(importe);
+                }
                 break;
 
             case "TARJETA":
