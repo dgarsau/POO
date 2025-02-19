@@ -1,0 +1,53 @@
+@startuml
+package org.example.ecommerce {
+    abstract class MetodoPago {
+        + abstract void procesarPago(double importe)
+    }
+
+    class TarjetaCredito {
+        - static Scanner entrada
+        - static final String[] TIPOS
+        - static final int TAMANYO_TARJETA
+        - String nro_tarjeta
+        - String tipo
+        + TarjetaCredito()
+        + void procesarPago(double importe)
+        + void introducirDatos()
+        + boolean validarTarjeta(String nro_tarjeta, String tipo)
+        + void construirTarjeta()
+    }
+
+    class Bizum {
+        - static final String FORMATO_TELEFONO
+        - static Scanner entrada
+        - static Random random
+        - String telefono
+        - int pin
+        + Bizum()
+        + void procesarPago(double importe)
+        + void introducirDatos()
+        + void construirBizum()
+        + boolean validarBizum(String telefono)
+        + boolean validarBizum(int pin)
+    }
+
+    class PayPal {
+        - static final String FORMATO_CORREO
+        - static Scanner entrada
+        - static Random random
+        - String correo
+        - double saldo
+        + PayPal()
+        + void procesarPago(double importe)
+        + void introducirDatos()
+        + boolean validarPaypal(String correo)
+        + void construirPaypal()
+        + boolean validarPago(double importe, double saldo)
+        + double getSaldo()
+    }
+
+    MetodoPago <|-- TarjetaCredito
+    MetodoPago <|-- Bizum
+    MetodoPago <|-- PayPal
+}
+@enduml

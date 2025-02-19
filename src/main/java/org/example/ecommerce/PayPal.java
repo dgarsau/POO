@@ -30,13 +30,10 @@ public class PayPal extends MetodoPago{
         this.correo = numero;
     }
 
-    public boolean validarPaypal(String correo, double saldo) {
+    public boolean validarPaypal(String correo) {
         System.out.println("Validando PayPal...");
         if (!correo.matches(FORMATO_CORREO)){
             System.out.println("ERROR. Formato de correo incorrecto.");
-            return false;
-        } else if (saldo<0) {
-            System.out.println("ERROR. Saldo incorrecto.");
             return false;
         } else{
             return true;
@@ -47,7 +44,7 @@ public class PayPal extends MetodoPago{
         boolean formato=false;
         while(!formato){
             introducirDatos();
-            formato=validarPaypal(correo, saldo);
+            formato=validarPaypal(correo);
             entrada.nextLine();
         }
         this.saldo=random.nextInt(0,1000000)/100.0;

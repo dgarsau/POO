@@ -36,6 +36,8 @@ public class Tienda {
                 boolean pago = paypal.validarPago(importe, paypal.getSaldo());
                 if (pago){
                     paypal.procesarPago(importe);
+                } else {
+                    System.out.println("No se pudo procesar el pago. SALDO INSUFICIENTE");
                 }
                 break;
 
@@ -44,11 +46,10 @@ public class Tienda {
                 importe=introducirImporte();
                 tarjeta.procesarPago(importe);
                 break;
+
+            default:
+                System.exit(0);
         }
-
-    }
-
-    public static void realizarPago(MetodoPago metodo, double importe){
 
     }
 
@@ -59,7 +60,6 @@ public class Tienda {
             metodo = entrada.next().toUpperCase();
             if (!Arrays.asList(METODOS).contains(metodo)){
                 System.out.println("ERROR. Método no válido.");
-                separador();
             }
         } while (!Arrays.asList(METODOS).contains(metodo));
         return metodo;
@@ -82,10 +82,6 @@ public class Tienda {
         }while (importe<=0);
 
         return importe;
-    }
-
-    public static void separador(){
-        System.out.println("-------------------------------------");
     }
 
 }
