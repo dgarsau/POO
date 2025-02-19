@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class TarjetaCredito extends MetodoPago{
 
-    public static Scanner entrada = new Scanner(System.in);
-    public static final String[] TIPOS = {"VISA", "MASTERCARD", "MAESTRO"};
-    public static final int TAMNYO_TARJETA = 16;
+    static Scanner entrada = new Scanner(System.in);
+    static final String[] TIPOS = {"VISA", "MASTERCARD", "MAESTRO"};
+    static final int TAMNYO_TARJETA = 16;
 
     private String nro_tarjeta;
     private String tipo;

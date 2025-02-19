@@ -1,6 +1,6 @@
 package org.example.herencia_persona;
 
-public class Organizador extends Persona{
+public class Organizador extends Persona implements  Organizable{
 
     private String rol;
 
@@ -20,4 +20,8 @@ public class Organizador extends Persona{
     }
 
 
+    @Override
+    public void organizarEvento() {
+        System.out.println("Organizando organizadas.");
+    }
 }

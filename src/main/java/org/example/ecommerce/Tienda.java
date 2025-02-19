@@ -1,6 +1,7 @@
 package org.example.ecommerce;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Tienda {
@@ -14,7 +15,19 @@ public class Tienda {
         String metodo=elegirMetodo();
         switch (metodo){
             case "BIZUM":
+                boolean error = false;
+                Bizum bizum = new Bizum();
+                while(!error){
+                    System.out.println("Introduce el PIN: ");
+                    try {
+                        error = bizum.validarBizum(entrada.nextInt());
+                    } catch (InputMismatchException e){
+                        System.out.println("ERROR. PIN no válido.");
+                        entrada.nextLine();
+                    }
+                }
                 importe=introducirImporte();
+                bizum.procesarPago(importe);
                 break;
 
             case "PAYPAL":
@@ -53,14 +66,21 @@ public class Tienda {
     }
 
     public static double introducirImporte(){
-        double importe;
+        double importe=-1;
+
         do{
             System.out.println("Introduce el importe a pagar:");
-            importe= entrada.nextDouble();
-            if(importe<=0){
-                System.out.println("ERROR. Importe no válido.");
+            try {
+                importe= entrada.nextDouble();
+                if(importe<=0){
+                    System.out.println("ERROR. Importe no válido.");
+                }
+            } catch (InputMismatchException e){
+                System.out.println("ERROR. Importe incorrecto.");
+                entrada.nextLine();
             }
         }while (importe<=0);
+
         return importe;
     }
 

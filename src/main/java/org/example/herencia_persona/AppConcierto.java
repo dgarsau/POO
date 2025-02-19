@@ -31,6 +31,9 @@ public class AppConcierto {
 
         for (Persona p : personas) {
             p.mostrarInfo(); //se ejecuta la versión sobrescrita de cada subclase
+            if (p instanceof Organizable){
+                ((Organizable) p).organizarEvento();
+            }
             System.out.println("--------------------------------------");
         }
 
@@ -42,6 +45,7 @@ public class AppConcierto {
         mostrarAcceso(artista);      //Accediendo como Artista: Preparando el show.
         mostrarAcceso(asistente2);    //Accediendo como Asistente: Buscando su asiento.
         mostrarAcceso(organizador);  //Accediendo como Organizador: Coordinando el evento.
+
 
 
     }

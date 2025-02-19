@@ -1,12 +1,15 @@
 package org.example.ecommerce;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PayPal extends MetodoPago{
 
-    public static Scanner entrada = new Scanner(System.in);
-    private static final String FORMATO_CORREO = "\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b";
+    static final String FORMATO_CORREO = "\\b[\\w.%-]+@[-.\\w]+\\.com";
+
+    static Scanner entrada = new Scanner(System.in);
+    static Random random = new Random();
 
     private String correo;
     private double saldo;
@@ -25,14 +28,6 @@ public class PayPal extends MetodoPago{
         System.out.println("Correo electrónico:");
         String numero = entrada.next();
         this.correo = numero;
-        System.out.println("Saldo:");
-        try {
-            double saldo = entrada.nextDouble();
-            this.saldo = saldo;
-        }catch (InputMismatchException e){
-            System.out.println("ERROR. Entrada no válida.");
-            this.saldo = -1;
-        }
     }
 
     public boolean validarPaypal(String correo, double saldo) {
@@ -55,6 +50,8 @@ public class PayPal extends MetodoPago{
             formato=validarPaypal(correo, saldo);
             entrada.nextLine();
         }
+        this.saldo=random.nextInt(0,1000000)/100.0;
+        System.out.println("Saldo: " + saldo);
     }
 
     public boolean validarPago(double importe, double saldo){
