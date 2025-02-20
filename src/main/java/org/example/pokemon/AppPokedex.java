@@ -28,5 +28,36 @@ public class AppPokedex {
             }
         }
 
+        AtaquesAgua ataquesAgua = new AtaquesAgua() {
+            @Override
+            public void hidroBomba() {
+
+            }
+
+            @Override
+            public void surf() {
+
+            }
+
+            @Override
+            public void pistolaAgua() {
+
+            }
+
+            @Override
+            public void salpicadura() {
+
+            }
+        };
+
+        Electrico pikachu3 = new Electrico(35, 12){
+            @Override
+            public void atacar(){
+                System.out.println("Rayoooo");
+            }
+        };
+
+        pikachu3.atacar();
+
     }
 }
