@@ -7,7 +7,7 @@ public class TarjetaCredito extends MetodoPago{
 
     static Scanner entrada = new Scanner(System.in);
     static final String[] TIPOS = {"VISA", "MASTERCARD", "MAESTRO"};
-    static final int TAMNYO_TARJETA = 16;
+    static final int TAMANYO_TARJETA = 16;
 
     private String nro_tarjeta;
     private String tipo;
@@ -34,7 +34,7 @@ public class TarjetaCredito extends MetodoPago{
 
     public boolean validarTarjeta(String nro_tarjeta, String tipo){
         System.out.println("Validando tarjeta...");
-        if (nro_tarjeta.length()!=TAMNYO_TARJETA || !Arrays.asList(TIPOS).contains(tipo)){
+        if (nro_tarjeta.length()!=TAMANYO_TARJETA || !Arrays.asList(TIPOS).contains(tipo)){
             System.out.println("Los datos de tu tarjeta no son correctos.");
             return false;
         }else{
