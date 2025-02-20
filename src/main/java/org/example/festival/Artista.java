@@ -1,4 +1,4 @@
-package org.example.herencia_persona;
+package org.example.festival;
 
 class Artista extends Persona {
 

@@ -1,4 +1,4 @@
-package org.example.herencia_persona;
+package org.example.festival;
 
 public class Organizador extends Persona implements  Organizable{
 

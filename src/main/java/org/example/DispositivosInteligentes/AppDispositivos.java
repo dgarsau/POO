@@ -1,5 +1,6 @@
 package org.example.DispositivosInteligentes;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class AppDispositivos {
@@ -60,6 +61,11 @@ public class AppDispositivos {
                 }
             }
         };
+
+        listaDispositivos.add(proyector);
+        listaDispositivos.add(horno);
+
+        System.out.println("====================================================================");
 
         for (Dispositivo dispositivo : listaDispositivos){
             dispositivo.encender();

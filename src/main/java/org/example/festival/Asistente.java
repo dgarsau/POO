@@ -1,9 +1,9 @@
-package org.example.herencia_persona;
+package org.example.festival;
 
 class Asistente extends Persona {
-    protected String entrada;
+    protected TipoEntrada entrada;
 
-    public Asistente(String nombre, int edad, String entrada) {
+    public Asistente(String nombre, int edad, TipoEntrada entrada) {
         super(nombre, edad);
         this.entrada = entrada;
     }
