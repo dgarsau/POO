@@ -3,7 +3,7 @@ package org.example.festival;
 class Asistente extends Persona {
     protected TipoEntrada entrada;
 
-    public Asistente(String nombre, int edad, TipoEntrada entrada) {
+    public Asistente(String nombre, int edad, TipoEntrada entrada) throws EdadMinimaException {
         super(nombre, edad);
         this.entrada = entrada;
     }

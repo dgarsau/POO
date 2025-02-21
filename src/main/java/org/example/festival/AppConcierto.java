@@ -2,10 +2,14 @@ package org.example.festival;
 
 public class AppConcierto {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EdadMinimaException {
 
-        Asistente a1 = new Asistente("Carlos", 25, TipoEntrada.VIP);
-        Artista art1 = new Artista("Dua Lipa", 28, "Pop");
+        Asistente a1=null;
+        Artista art1=null;
+
+        a1 = new Asistente("Carlos", 15, TipoEntrada.VIP);
+        art1 = new Artista("Dua Lipa", 28, "Pop");
+
         Organizador org1 = new Organizador("Paco", 43, "Produccion");
 
         System.out.println("Información del asistente:");
