@@ -1,4 +1,6 @@
-package org.example.CopaDelRey;
+package org.example.CopaDelRey.Mantenimiento;
+
+import org.example.CopaDelRey.Equipos;
 
 public class ConsultarEquipos {
 
@@ -33,6 +35,7 @@ public class ConsultarEquipos {
             case '5':
                 break;
             case '6':
+                mostrarInfo(Equipos.SENIOR);
                 break;
             default:
                 AppMantenimiento.menuMantenimiento();
@@ -41,7 +44,7 @@ public class ConsultarEquipos {
     }
 
     public static void mostrarInfo(Equipos equipo){
-        
+
     }
 
 }

@@ -1,6 +1,10 @@
 package org.example.CopaDelRey;
 
+import java.util.ArrayList;
+
 public class Jugador extends MutxamelFC implements AccionesDeportivas{
+
+    public static ArrayList<Jugador> jugadores = new ArrayList<>();
 
     private Equipos categoria;
     private int dorsal;
@@ -9,8 +13,18 @@ public class Jugador extends MutxamelFC implements AccionesDeportivas{
     public Jugador(String nombre, int edad, Equipos categoria, int dorsal, Posiciones posicion) {
         super(nombre, edad);
         this.categoria=categoria;
-        this.dorsal=dorsal;
+        setDorsal(dorsal, categoria);
         this.posicion=posicion;
+        jugadores.add(this); //para controlar el dorsal
+    }
+
+    public void setDorsal(int dorsal, Equipos categoria) {
+        for (Jugador jugador : jugadores){
+            if (jugador.dorsal==dorsal && jugador.categoria==categoria){
+                throw new MismoDorsalException();
+            }
+        }
+        this.dorsal=dorsal;
     }
 
     public void calentar(){
@@ -49,4 +63,37 @@ public class Jugador extends MutxamelFC implements AccionesDeportivas{
     public void jugarPartido(String rival) {
         System.out.println("Jugador " + super.getNombre() + " jugando un partido contra el " + rival);
     }
+
+    // Setters
+
+    public void setCategoria(Equipos categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setPosicion(Posiciones posicion) {
+        this.posicion = posicion;
+    }
+
+    public Equipos getCategoria() {
+        return categoria;
+    }
+
+    public int getDorsal() {
+        return dorsal;
+    }
+
+    // toString
+
+    @Override
+    public String toString() {
+        return "[Nombre=" + super.getNombre() +
+                ", edad=" + super.getEdad() +
+                ", categoria=" + categoria +
+                ", dorsal=" + dorsal +
+                ", posicion=" + posicion + "]"
+                ;
+    }
+
+
+
 }

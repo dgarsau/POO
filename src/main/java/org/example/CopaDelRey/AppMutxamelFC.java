@@ -8,12 +8,13 @@ public class AppMutxamelFC {
 
     public static void main(String[] args) {
 
+
         ArrayList<MutxamelFC> integrantes = new ArrayList<>();
 
         // crear varios jugadores para el equipo SENIOR
 
-        Jugador jugador1 = new Jugador("Juan", 20, Equipos.SENIOR, 3, Posiciones.DELANTERO);
-        Jugador jugador2 = new Jugador("Paco", 23, Equipos.SENIOR, 1, Posiciones.PORTERO);
+        Jugador jugador1 = new Jugador("Juan", 20, Equipos.SENIOR, 1, Posiciones.DELANTERO);
+        Jugador jugador2 = new Jugador("Paco", 23, Equipos.SENIOR, 2, Posiciones.PORTERO);
         integrantes.add(jugador1);
         integrantes.add(jugador2);
 

@@ -1,4 +1,4 @@
-package org.example.CopaDelRey;
+package org.example.CopaDelRey.Mantenimiento;
 
 import java.util.Scanner;
 
@@ -19,7 +19,6 @@ public class AppMantenimiento {
         switchMenu(eleccion);
     }
 
-
     public static char eleccionMenu(){
         System.out.print("\nSelecciona una opción -->");
         return entrada.next().toUpperCase().charAt(0);
@@ -28,6 +27,7 @@ public class AppMantenimiento {
     public static void switchMenu(char eleccion){
         switch (eleccion){
             case '1':
+                MantenimientoJugadores.menuJugadores();
                 break;
             case '4':
                 ConsultarEquipos.menuEquipos();

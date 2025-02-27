@@ -2,13 +2,23 @@ package org.example.CopaDelRey;
 
 public class Entrenador extends MutxamelFC implements AccionesDeportivas{
 
+    private final String FORMACION = "\\d-\\d-\\d";
+
     private Equipos equipo;
     private String formacionPreferida;
 
     public Entrenador(String nombre, int edad, Equipos equipo, String formacionPreferida) {
         super(nombre, edad);
         this.equipo=equipo;
-        this.formacionPreferida=formacionPreferida;
+        setFormacionPreferida(formacionPreferida);
+    }
+
+    public void setFormacionPreferida(String formacionPreferida) {
+        if(formacionPreferida.matches(FORMACION)){
+            this.formacionPreferida=formacionPreferida;
+        }else {
+            throw new FormacionException();
+        }
     }
 
     public void planificarEntrenamiento(){
